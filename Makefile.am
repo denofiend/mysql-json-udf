@@ -1,7 +1,7 @@
-lib_LTLIBRARIES = lib_mysqludf_skeleton.la
-lib_mysqludf_skeleton_la_SOURCES = lib_mysqludf_skeleton.cc mysqludf.cc
-lib_mysqludf_skeleton_la_CXXFLAGS = -DSTANDARD -DMYSQL_SERVER @MYSQL_CFLAGS@
-lib_mysqludf_skeleton_la_LDFLAGS = -module -avoid-version -no-undefined -rpath @MYSQL_PLUGINDIR@
+lib_LTLIBRARIES = lib_jsonudf.la
+lib_jsonudf_la_SOURCES = lib_jsonudf.cc mysqludf.cc json.c json_helper.c
+lib_jsonudf_la_CXXFLAGS = -DSTANDARD -DMYSQL_SERVER @MYSQL_CFLAGS@
+lib_jsonudf_la_LDFLAGS = -module -avoid-version -no-undefined -rpath @MYSQL_PLUGINDIR@
 
 EXTRA_DIST = *.h test *.sql API
 

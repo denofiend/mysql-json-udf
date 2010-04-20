@@ -7,8 +7,8 @@
 <storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.so.debug.1397506199" moduleId="org.eclipse.cdt.core.settings" name="Debug">
 <externalSettings>
 <externalSetting>
-<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/lib_mysqludf_skeleton"/>
-<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/lib_mysqludf_skeleton/Debug"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/lib_jsonudf"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/lib_jsonudf/Debug"/>
 </externalSetting>
 </externalSettings>
 <extensions>
@@ -20,11 +20,11 @@
 </extensions>
 </storageModule>
 <storageModule moduleId="cdtBuildSystem" version="4.0.0">
-<configuration artifactExtension="so" artifactName="lib_mysqludf_skeleton" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.sharedLib" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.sharedLib" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.so.debug.1397506199" name="Debug" parent="cdt.managedbuild.config.gnu.so.debug">
+<configuration artifactExtension="so" artifactName="lib_jsonudf" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.sharedLib" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.sharedLib" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.so.debug.1397506199" name="Debug" parent="cdt.managedbuild.config.gnu.so.debug">
 <folderInfo id="cdt.managedbuild.config.gnu.so.debug.1397506199." name="/" resourcePath="">
 <toolChain id="cdt.managedbuild.toolchain.gnu.so.debug.1699767620" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.so.debug">
 <targetPlatform id="cdt.managedbuild.target.gnu.platform.so.debug.278081586" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.so.debug"/>
-<builder buildPath="${workspace_loc:/lib_mysqludf_skeleton/Debug}" id="cdt.managedbuild.target.gnu.builder.so.debug.463270308" managedBuildOn="true" name="Gnu Make Builder.Debug" superClass="cdt.managedbuild.target.gnu.builder.so.debug"/>
+<builder buildPath="${workspace_loc:/lib_jsonudf/Debug}" id="cdt.managedbuild.target.gnu.builder.so.debug.463270308" managedBuildOn="true" name="Gnu Make Builder.Debug" superClass="cdt.managedbuild.target.gnu.builder.so.debug"/>
 <tool id="cdt.managedbuild.tool.gnu.archiver.base.668800145" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
 <tool id="cdt.managedbuild.tool.gnu.cpp.compiler.so.debug.161633571" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.so.debug">
 <option id="gnu.cpp.compiler.so.debug.option.optimization.level.1877207123" superClass="gnu.cpp.compiler.so.debug.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
@@ -134,8 +134,8 @@
 <storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.so.release.57603764" moduleId="org.eclipse.cdt.core.settings" name="Release">
 <externalSettings>
 <externalSetting>
-<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/lib_mysqludf_skeleton"/>
-<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/lib_mysqludf_skeleton/Release"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/lib_jsonudf"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/lib_jsonudf/Release"/>
 </externalSetting>
 </externalSettings>
 <extensions>
@@ -147,11 +147,11 @@
 </extensions>
 </storageModule>
 <storageModule moduleId="cdtBuildSystem" version="4.0.0">
-<configuration artifactExtension="so" artifactName="lib_mysqludf_skeleton" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.sharedLib" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.sharedLib" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.so.release.57603764" name="Release" parent="cdt.managedbuild.config.gnu.so.release">
+<configuration artifactExtension="so" artifactName="lib_jsonudf" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.sharedLib" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.sharedLib" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.so.release.57603764" name="Release" parent="cdt.managedbuild.config.gnu.so.release">
 <folderInfo id="cdt.managedbuild.config.gnu.so.release.57603764." name="/" resourcePath="">
 <toolChain id="cdt.managedbuild.toolchain.gnu.so.release.2064521790" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.so.release">
 <targetPlatform id="cdt.managedbuild.target.gnu.platform.so.release.1672444170" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.so.release"/>
-<builder buildPath="${workspace_loc:/lib_mysqludf_skeleton/Release}" id="cdt.managedbuild.target.gnu.builder.so.release.1291020698" managedBuildOn="true" name="Gnu Make Builder.Release" superClass="cdt.managedbuild.target.gnu.builder.so.release"/>
+<builder buildPath="${workspace_loc:/lib_jsonudf/Release}" id="cdt.managedbuild.target.gnu.builder.so.release.1291020698" managedBuildOn="true" name="Gnu Make Builder.Release" superClass="cdt.managedbuild.target.gnu.builder.so.release"/>
 <tool id="cdt.managedbuild.tool.gnu.archiver.base.698688231" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
 <tool id="cdt.managedbuild.tool.gnu.cpp.compiler.so.release.1942320159" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.so.release">
 <option id="gnu.cpp.compiler.so.release.option.optimization.level.1148681982" superClass="gnu.cpp.compiler.so.release.option.optimization.level" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
@@ -258,6 +258,6 @@
 </cconfiguration>
 </storageModule>
 <storageModule moduleId="cdtBuildSystem" version="4.0.0">
-<project id="lib_mysqludf_skeleton.cdt.managedbuild.target.gnu.so.1636694991" name="Shared Library" projectType="cdt.managedbuild.target.gnu.so"/>
+<project id="lib_jsonudf.cdt.managedbuild.target.gnu.so.1636694991" name="Shared Library" projectType="cdt.managedbuild.target.gnu.so"/>
 </storageModule>
 </cproject>

@@ -1,3 +1,12 @@
 
-lib_mysqludf_skeleton_info()
-	Output the library version.
+json_getstring(string json, string key)
+=======================================
+searches the specified json for the given key. if found returns the string representation else returns null.
+example
+-------
+  suppose the json_example string is {"key":{"other":10},"some":[20,10,20]}
+    > set @json_example = "{\"key\":{\"other\":10},\"some\":[20,10,20]}";
+  to get the key "key" out of json_example
+    > select json_getstring(@json_example, "key");
+  to get the key "key/other" out of json_example
+    > select json_getstring(json_getstring(@json_example, "key"), "other");

@@ -1,6 +1,6 @@
 AC_PREREQ(2.59)
 
-AC_INIT(lib_mysqludf_skeleton,0.0.1,you@example.com)
+AC_INIT(lib_jsonudf,0.0.1,saurabh@webaroo.com)
 AC_CONFIG_AUX_DIR(config)
 AC_CONFIG_MACRO_DIR(config)
 AM_CONFIG_HEADER(config.h)
