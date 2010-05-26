@@ -38,6 +38,7 @@ extern "C" {
 }
 #endif
 
+#define LOG(str) {fprintf(stderr, str); fflush(stderr);}
 
 /*
  * IMPLEMENTATION
@@ -65,15 +66,19 @@ char *jstr(UDF_INIT *initid, UDF_ARGS *args, char *result, unsigned long *length
     return 0;
   }
   json_t *root = NULL;
-  if (json_parse_document(&root, args->args[0]) != JSON_OK)
+  int parse_error = json_parse_document(&root, args->args[0]);
+  if (parse_error != JSON_OK)
   {
     *is_null = 1;
+    memset(args->args[0], 0, strlen(args->args[0]));
     return 0;
   }
   json_t *element = json_find_first_label(root, args->args[1]);
   if (element == NULL || element->child == NULL)
   {
     *is_null = 1;
+    memset(args->args[0], 0, strlen(args->args[0]));
+    json_free_value(&root);
     return 0;
   }
   char *text = NULL;
@@ -81,6 +86,7 @@ char *jstr(UDF_INIT *initid, UDF_ARGS *args, char *result, unsigned long *length
   *length = strlen(text);
   memcpy(result, text, *length);
   result[*length]= 0;
+  memset(args->args[0], 0, strlen(args->args[0]));
   free(text);
   json_free_value(&root);
   return result;
