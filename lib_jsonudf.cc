@@ -31,9 +31,9 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
-	DLLEXP my_bool json_getstring_init(UDF_INIT *initid, UDF_ARGS *args, char *message);
-	DLLEXP void json_getstring_deinit(UDF_INIT *initid);
-	DLLEXP char *json_getstring(UDF_INIT *initid, UDF_ARGS *args, char *result, unsigned long *length, char *is_null, char *error);
+	DLLEXP my_bool jstr_init(UDF_INIT *initid, UDF_ARGS *args, char *message);
+	DLLEXP void jstr_deinit(UDF_INIT *initid);
+	DLLEXP char *jstr(UDF_INIT *initid, UDF_ARGS *args, char *result, unsigned long *length, char *is_null, char *error);
 #ifdef	__cplusplus
 }
 #endif
@@ -44,21 +44,26 @@ extern "C" {
  */
 
 
-my_bool json_getstring_init(UDF_INIT *initid, UDF_ARGS *args, char *message)
+my_bool jstr_init(UDF_INIT *initid, UDF_ARGS *args, char *message)
 {
   if (args->arg_count != 2)
-    RETURN_ERR("Invalid arguments to json_getstring:(string json, string key) expected");
+    RETURN_ERR("Invalid arguments to jstr:(string json, string key) expected");
   args->arg_type[0] = STRING_RESULT;
   args->arg_type[1] = STRING_RESULT;
   return 0;
 }
 
-void json_getstring_deinit(UDF_INIT *initid)
+void jstr_deinit(UDF_INIT *initid)
 {
 }
 
-char *json_getstring(UDF_INIT *initid, UDF_ARGS *args, char *result, unsigned long *length, char *is_null, char *error)
+char *jstr(UDF_INIT *initid, UDF_ARGS *args, char *result, unsigned long *length, char *is_null, char *error)
 {
+  if (args->args[0] == NULL)
+  {
+    *is_null = 1;
+    return 0;
+  }
   json_t *root = NULL;
   if (json_parse_document(&root, args->args[0]) != JSON_OK)
   {

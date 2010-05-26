@@ -1,4 +1,4 @@
 USE mysql;
 
-DROP FUNCTION IF EXISTS json_getstring;
-CREATE FUNCTION json_getstring RETURNS STRING SONAME 'lib_jsonudf.so';
+DROP FUNCTION IF EXISTS jstr;
+CREATE FUNCTION jstr RETURNS STRING SONAME 'lib_jsonudf.so';
