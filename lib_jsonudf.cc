@@ -57,27 +57,25 @@ void jstr_deinit(UDF_INIT *initid)
 char *jstr(UDF_INIT *initid, UDF_ARGS *args, char *result, unsigned long *length, char *is_null, char *error)
 {
   if (args->args[0] == NULL)
-  {
-    *is_null = 1;
-    return 0;
-  }
+    RETURN_NULL();
   json_t *root = NULL;
+  // we must ensure that the length of the field is atleast +1 than required
   char terminator = args->args[0][args->lengths[0]];
   args->args[0][args->lengths[0]] = 0;
   int parse_error = json_parse_document(&root, args->args[0]);
   if (parse_error != JSON_OK)
   {
-    *is_null = 1;
+    // input json is invalid
     args->args[0][args->lengths[0]] = terminator;
-    return 0;
+    RETURN_NULL();
   }
   args->args[0][args->lengths[0]] = terminator;
   json_t *element = json_find_first_label(root, args->args[1]);
   if (element == NULL || element->child == NULL)
   {
-    *is_null = 1;
+    // input json does not have the requested element
     json_free_value(&root);
-    return 0;
+    RETURN_NULL();
   }
   char *text = NULL;
   json_tree_to_string(element->child, &text);

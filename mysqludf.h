@@ -56,6 +56,7 @@ char *copy_argname(char *att, unsigned long length);
 
 #define TRIM_BACKQUOTE(fnull) (fnull+(int)(fnull[0]=='`'))		// Skip starting backquote
 #define RETURN_ERR(msg) { strcpy(message, msg); return 1; }		// Set error message and return in %_init functions
+#define RETURN_NULL() { *is_null = 1; return 0; }				// Set null and return in udf functions
 #define ATTRIBUTE_COMPARE(i, str, len) (args->attribute_lengths[i] == len && strncmp_caseins(args->attributes[i], str, len) == 0)
 
 #endif /* MYSQLUDF_H_ */
