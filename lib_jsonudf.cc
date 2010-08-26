@@ -80,7 +80,14 @@ char *jstr(UDF_INIT *initid, UDF_ARGS *args, char *result, unsigned long *length
   char *text = NULL;
   json_tree_to_string(element->child, &text);
   *length = strlen(text);
-  memcpy(result, text, *length);
+  // remove quotes if object is string
+  bool is_str = *length > 0 ? (text[0] == '"'? true : false) : false;
+  if (is_str) {
+    *length = *length - 2;
+    memcpy(result, text+1, *length);
+  } else {
+    memcpy(result, text, *length);
+  }
   result[*length]= 0;
   free(text);
   json_free_value(&root);
